@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { HomeComponent } from './pages/Home';
+import { Routes } from './config';
 
 /**
  * Render the React Bootstrap
  */
 
-ReactDOM.render(<HomeComponent />, document.getElementById('root'));
+ReactDOM.render(<Routes />, document.getElementById('root'));
