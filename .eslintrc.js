@@ -19,6 +19,7 @@ module.exports = {
     },
     ecmaVersion: 12,
     sourceType: 'module',
+    project: ['./tsconfig.json']
   },
   plugins: ['react', '@typescript-eslint', 'react-perf', 'prettier'],
   rules: {
@@ -32,6 +33,7 @@ module.exports = {
     '@typescript-eslint/indent': ['error', 2],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'no-use-before-define': 'off',
+    'import/prefer-default-export': 'off'
   },
   settings: {
     'import/resolver': {
@@ -40,4 +42,7 @@ module.exports = {
       },
     },
   },
+  "ignorePatterns": [
+    ".eslintrc.js"
+  ],
 };
