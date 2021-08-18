@@ -4,8 +4,17 @@ export const themes = {
     colors: {
       body: '#222436',
       text: '#c8d3f5',
-      truthy: '#86e1fc',
-      falsy: '#ff757f',
+      true: {
+        color: '#86e1fc',
+        focus: '#151624',
+        contrast: '#181928',
+      },
+      false: {
+        color: '#ff757f',
+        focus: '#151624',
+        contrast: '#181928',
+      },
+      card: '#181928',
     },
   },
 };

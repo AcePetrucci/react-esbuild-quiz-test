@@ -15,28 +15,24 @@ import {
  * Component
  */
 
-export const HomeComponent = (_props) => {
-  const a = 1;
+export const HomeComponent = (_props) => (
+  <HomeWrapper>
+    <HomeTitle> Welcome to the Trivia Challenge! </HomeTitle>
 
-  return (
-    <HomeWrapper>
-      <HomeTitle> Welcome to the Trivia Challenge! </HomeTitle>
+    <HomeIntroduction>
+      You will be presented with 10
+      <HomeTruthy> True </HomeTruthy>
+      or
+      <HomeFalsy> False </HomeFalsy>
+      questions.
+    </HomeIntroduction>
 
-      <HomeIntroduction>
-        You will be presented with 10
-        <HomeTruthy> True </HomeTruthy>
-        or
-        <HomeFalsy> False </HomeFalsy>
-        questions.
-      </HomeIntroduction>
+    <HomeIntroduction>
+      Can you score 100%?
+    </HomeIntroduction>
 
-      <HomeIntroduction>
-        Can you score 100%?
-      </HomeIntroduction>
-
-      <HomeAction>
-        <HomeActionButton> Begin </HomeActionButton>
-      </HomeAction>
-    </HomeWrapper>
-  );
-};
+    <HomeAction>
+      <HomeActionButton to="/quiz"> Begin </HomeActionButton>
+    </HomeAction>
+  </HomeWrapper>
+);

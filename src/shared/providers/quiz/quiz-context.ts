@@ -16,8 +16,8 @@ const quizContextData: IAnswers = {
 };
 
 const quizContextSetData: Dispatch<SetStateAction<IAnswers>> = (
-  value: SetStateAction<IAnswers>,
-) => value;
+  answer: SetStateAction<IAnswers>,
+) => answer;
 
 /**
  * Context

@@ -1,3 +1,6 @@
 export interface IAnswers {
-  answers: boolean[];
+  answers: [{
+    question: string;
+    correct: boolean;
+  }?];
 }

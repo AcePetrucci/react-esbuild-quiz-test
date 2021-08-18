@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 // Shared Styled Components
 import {
@@ -35,12 +36,12 @@ export const HomeIntroduction = styled(H2)`
 `;
 
 export const HomeTruthy = styled.strong`
-  color: ${themes.dark.colors.truthy};
+  color: ${themes.dark.colors.true.color};
   font-weight: 500;
 `;
 
 export const HomeFalsy = styled.strong`
-  color: ${themes.dark.colors.falsy};
+  color: ${themes.dark.colors.false.color};
   font-weight: 500;
 `;
 
@@ -51,16 +52,14 @@ export const HomeAction = styled.div`
   justify-content: center;
 `;
 
-export const HomeActionButton = styled.button`
+export const HomeActionButton = styled(Link)`
   ${fontSize(48)};
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
   color: ${themes.dark.colors.text};
   cursor: pointer;
   font-weight: 400;
   letter-spacing: ${pxToRem(4)};
   outline: none;
-  text-transform: uppercase;
   padding: ${pxToRem(16, 32)};
+  text-decoration: none;
+  text-transform: uppercase;
 `;
