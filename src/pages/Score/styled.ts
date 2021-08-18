@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 // Shared Styled Components
 import {
@@ -8,6 +7,7 @@ import {
   H2,
   H4,
   pxToRem,
+  LinkButton,
 } from 'styled';
 
 // Themes
@@ -33,6 +33,10 @@ export const ScoreTitle = styled(H1)`
 export const ScoreResults = styled(H2)`
   word-spacing: ${pxToRem(4)};
   margin-bottom: ${pxToRem(36)};
+
+  @media screen and (max-width: 1440px) {
+    margin-bottom: ${pxToRem(18)};
+  }
 `;
 
 export const ScoreAnswers = styled.section`
@@ -47,6 +51,22 @@ export const ScoreAnswers = styled.section`
   
   &::-webkit-scrollbar-thumb {
     background-color: ${themes.dark.colors.card};
+  }
+
+  @media screen and (max-width: 1660px) {
+    width: ${pxToRem(1080)};
+  }
+
+  @media screen and (max-width: 1360px) {
+    width: ${pxToRem(860)};
+  }
+
+  @media screen and (max-width: 1080px) {
+    width: ${pxToRem(640)};
+  }
+
+  @media screen and (max-width: 880px) {
+    width: ${pxToRem(440)};
   }
 `;
 
@@ -65,16 +85,16 @@ export const ScoreAnswersItem = styled.p<{ correct: boolean }>`
     text-align: center;
     width: ${pxToRem(20)};
   }
+
+  @media screen and (max-width: 1660px) {
+    ${fontSize(28)};
+    margin-bottom: ${pxToRem(22)};
+  }
+
+  @media screen and (max-width: 1080px) {
+    ${fontSize(22)};
+    margin-bottom: ${pxToRem(16)};
+  }
 `;
 
-export const ScoreAction = styled(Link)`
-  ${fontSize(48)};
-  color: ${themes.dark.colors.text};
-  cursor: pointer;
-  font-weight: 400;
-  letter-spacing: ${pxToRem(4)};
-  outline: none;
-  padding: ${pxToRem(16, 32)};
-  text-decoration: none;
-  text-transform: uppercase;
-`;
+export const ScoreAction = styled(LinkButton)``;

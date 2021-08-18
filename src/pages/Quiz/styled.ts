@@ -7,6 +7,7 @@ import {
   H2,
   H4,
   pxToRem,
+  Button,
 } from 'styled';
 
 // Themes
@@ -27,6 +28,11 @@ export const QuizWrapper = styled.section`
 
 export const QuizCategory = styled(H1)`
   margin-bottom: ${pxToRem(80)};
+
+  @media screen and (max-width: 880px) {
+    margin-bottom: ${pxToRem(40)};
+    text-align: center;
+  }
 `;
 
 export const QuizQuestionWrapper = styled.div`
@@ -41,10 +47,33 @@ export const QuizQuestionWrapper = styled.div`
   padding: ${pxToRem(16, 32)};
   text-align: center;
   width: 100%;
+
+  @media screen and (max-width: 1660px) {
+    height: ${pxToRem(460)};
+    max-width: ${pxToRem(1080)};
+    padding: ${pxToRem(16, 48)};
+  }
+
+  @media screen and (max-width: 1360px) {
+    height: ${pxToRem(380)};
+    max-width: ${pxToRem(860)};
+  }
 `;
 
 export const QuizQuestion = styled(H2)`
   line-height: ${pxToRem(80)};
+
+  @media screen and (max-width: 1660px) {
+    line-height: ${pxToRem(60)};
+  }
+
+  @media screen and (max-width: 1360px) {
+    line-height: ${pxToRem(44)};
+  }
+
+  @media screen and (max-width: 1360px) {
+    line-height: ${pxToRem(28)};
+  }
 `;
 
 export const QuizActions = styled.div`
@@ -54,19 +83,20 @@ export const QuizActions = styled.div`
   width: 100%;
   max-width: ${pxToRem(1280)};
   margin-bottom: ${pxToRem(80)};
+
+  @media screen and (max-width: 1660px) {
+    justify-content: space-evenly;
+    max-width: ${pxToRem(1080)};
+  }
+
+  @media screen and (max-width: 1360px) {
+    max-width: ${pxToRem(860)};
+  }
 `;
 
-export const QuizButton = styled.button<{ answer: string }>`
-  ${fontSize(32)};
+export const QuizButton = styled(Button)<{ answer: string }>`
   background-color: ${(props) => themes.dark.colors[props.answer].contrast};
-  border-radius: 4px;
-  border: none;
   color: ${(props) => themes.dark.colors[props.answer].color};
-  cursor: pointer;
-  font-weight: 500;
-  outline: none;
-  padding: ${pxToRem(36, 48)};
-  width: ${pxToRem(240)};
 
   &:focus, &:hover {
     background-color: ${(props) => themes.dark.colors[props.answer].focus};

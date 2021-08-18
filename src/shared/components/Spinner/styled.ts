@@ -45,6 +45,14 @@ export const Loader = styled.div`
     display: block;
     padding-top: 100%;
   }
+
+  @media screen and (max-width: 1660px) {
+    width: ${pxToRem(250)};
+  }
+
+  @media screen and (max-width: 880px) {
+    width: ${pxToRem(150)};
+  }
 `;
 
 export const Circular = styled.svg`
