@@ -27,8 +27,6 @@ for (const k in process.env) {
   }
 }
 
-console.log(define);
-
 /**
  * Set ESbuild Config
  */

@@ -40,6 +40,14 @@ export const ScoreAnswers = styled.section`
   padding: ${pxToRem(0, 32)};
   overflow: auto;
   margin-bottom: ${pxToRem(32)};
+
+  &::-webkit-scrollbar {
+    width: 0.25em;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: ${themes.dark.colors.card};
+  }
 `;
 
 export const ScoreAnswersItem = styled.p<{ correct: boolean }>`

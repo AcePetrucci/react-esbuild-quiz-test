@@ -9,6 +9,9 @@ import memoize from 'memoizee';
 import clone from 'ramda/src/clone';
 import pipe from 'ramda/src/pipe';
 
+// Context
+import { useQuizContextUpdater } from 'providers';
+
 // Interfaces
 import {
   IQuiz,
@@ -23,6 +26,9 @@ import {
 export const useQuizSetup = () => {
   // State
   const [quizData, setQuizData] = useState<IQuiz['results']>();
+
+  // Context
+  const { handleQuizContext } = useQuizContextUpdater();
 
   // Fetch Callback
   const getQuiz = useCallback(async (): Promise<IQuiz> => {
@@ -42,6 +48,8 @@ export const useQuizSetup = () => {
 
   // Lifecycle
   useEffect(() => {
+    handleQuizContext(() => ({ answers: [] }));
+
     getQuiz().then((quiz) => {
       const formattedQuiz = quiz.results.map((quizItem) => {
         const clonedQuizItem = clone(quizItem);

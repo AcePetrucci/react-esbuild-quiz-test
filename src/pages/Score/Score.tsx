@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { Redirect } from 'react-router-dom';
 import uuid from 'react-uuid';
 
 import { useQuizContextState } from 'providers';
@@ -30,25 +31,27 @@ export const ScoreComponent = (_props) => {
     return score.length;
   }, [quizContext]);
 
-  return (
-    <ScoreWrapper>
-      <ScoreTitle> You scored </ScoreTitle>
-      <ScoreResults>
-        { correctScore } / { quizContext.answers.length }
-      </ScoreResults>
+  return quizContext.answers.length
+    ? (
+      <ScoreWrapper>
+        <ScoreTitle> You scored </ScoreTitle>
+        <ScoreResults>
+          { correctScore } / { quizContext.answers.length }
+        </ScoreResults>
 
-      <ScoreAnswers>
-        { quizContext.answers.map((answer) => (
-          <ScoreAnswersItem
-            key={uuid()}
-            correct={answer.correct}
-          >
-            { answer.question }
-          </ScoreAnswersItem>
-        )) }
-      </ScoreAnswers>
+        <ScoreAnswers>
+          { quizContext.answers.map((answer) => (
+            <ScoreAnswersItem
+              key={uuid()}
+              correct={answer.correct}
+            >
+              { answer.question }
+            </ScoreAnswersItem>
+          )) }
+        </ScoreAnswers>
 
-      <ScoreAction to="/quiz"> Play again? </ScoreAction>
-    </ScoreWrapper>
-  );
+        <ScoreAction to="/quiz"> Play again? </ScoreAction>
+      </ScoreWrapper>
+    )
+    : <Redirect to="/home" />;
 };
