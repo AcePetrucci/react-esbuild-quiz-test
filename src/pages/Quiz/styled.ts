@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 // Shared Styled Components
 import {
-  fontSize,
   H1,
   H2,
   H4,

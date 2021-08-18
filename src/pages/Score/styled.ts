@@ -5,7 +5,6 @@ import {
   fontSize,
   H1,
   H2,
-  H4,
   pxToRem,
   LinkButton,
 } from 'styled';

@@ -24,7 +24,6 @@
     "esbuild-plugin-alias": "^0.1.2",
     "esbuild-plugin-sass": "^0.6.0",
     "eslint-plugin-import-newlines": "^1.1.4",
-    "lodash": "^4.17.21",
     "memoizee": "^0.4.15",
     "ramda": "^0.27.1",
     "react": "^17.0.2",
@@ -35,9 +34,7 @@
     "styled-components": "^5.3.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.172",
     "@types/memoizee": "^0.4.6",
-    "@types/node": "^16.6.1",
     "@types/ramda": "^0.27.44",
     "@types/react": "^17.0.18",
     "@types/react-dom": "^17.0.9",

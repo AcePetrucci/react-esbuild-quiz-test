@@ -20,12 +20,20 @@ const port = 8000;
 const outDir = 'dist/build';
 const serveDir = 'dist';
 
-const define = {};
-for (const k in process.env) {
-  if (k.startsWith('REACT_APP_')) {
-    define[`process.env.${k}`] = JSON.stringify(process.env[k]);
-  }
-}
+// const define = {};
+// for (const k in process.env) {
+//   if (k.startsWith('REACT_APP_')) {
+//     define[`process.env.${k}`] = JSON.stringify(process.env[k]);
+//   }
+// }
+
+const define = Object.keys(process.env)
+  .filter((env) => env.startsWith('REACT_APP_'))
+  .reduce((acc, inc) => {
+    acc[`process.env.${inc}`] = JSON.stringify(process.env[inc]);
+
+    return acc;
+  }, {});
 
 /**
  * Set ESbuild Config
