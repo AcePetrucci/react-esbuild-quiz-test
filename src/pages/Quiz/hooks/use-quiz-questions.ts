@@ -43,9 +43,7 @@ export const useQuizQuestions = (quizData: IQuizItem[]) => {
       return clonedAnswers;
     });
 
-    if (currentQuestion < quizData.length - 1) {
-      nextQuestion();
-    }
+    nextQuestion();
   }, [quizData, currentQuestion]);
 
   // Return Hook

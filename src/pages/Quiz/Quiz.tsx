@@ -26,37 +26,35 @@ export const QuizComponent = (_props) => {
 
   // Render
   return quizData
-    ? (
-      <QuizWrapper>
-        <QuizCategory>
-          { quizData[currentQuestion].category }
-        </QuizCategory>
+    ? (currentQuestion >= quizData.length)
+      ? <Redirect to="/score" />
+      : (
+        <QuizWrapper>
+          <QuizCategory> { quizData[currentQuestion].category } </QuizCategory>
 
-        <QuizQuestionWrapper>
-          <QuizQuestion>
-            { quizData[currentQuestion].question }
-          </QuizQuestion>
-        </QuizQuestionWrapper>
+          <QuizQuestionWrapper>
+            <QuizQuestion>
+              { quizData[currentQuestion].question }
+            </QuizQuestion>
+          </QuizQuestionWrapper>
 
-        <QuizActions>
-          { quizData[currentQuestion].possible_answers.map((answer) => (
-            <QuizButton
-              key={uuid()}
-              answer={answer.toLowerCase()}
-              value={answer}
-              onClick={answerQuestion}
-            >
-              { answer }
-            </QuizButton>
-          )) }
-        </QuizActions>
+          <QuizActions>
+            { quizData[currentQuestion].possible_answers.map((answer) => (
+              <QuizButton
+                key={uuid()}
+                answer={answer.toLowerCase()}
+                value={answer}
+                onClick={answerQuestion}
+              >
+                { answer }
+              </QuizButton>
+            )) }
+          </QuizActions>
 
-        <QuizLength>
-          { currentQuestion + 1 } / { quizData.length }
-        </QuizLength>
-
-        { (currentQuestion + 1 >= quizData.length) && <Redirect to="/home" /> }
-      </QuizWrapper>
-    )
+          <QuizLength>
+            { currentQuestion + 1 } / { quizData.length }
+          </QuizLength>
+        </QuizWrapper>
+      )
     : <></>;
 };

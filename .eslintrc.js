@@ -55,7 +55,8 @@ module.exports = {
       "ExportDeclaration": { "multiline": true, "minProperties": 3 } 
     }],
     "indent": [ 2, 2 ],
-    "react/jsx-one-expression-per-line": 'off'
+    "react/jsx-one-expression-per-line": 'off',
+    "no-nested-ternary": 'off'
   },
   settings: {
     "import/resolver": {

@@ -10,7 +10,11 @@ import clone from 'ramda/src/clone';
 import pipe from 'ramda/src/pipe';
 
 // Interfaces
-import { IQuiz, IQuizItem } from '../models';
+import {
+  IQuiz,
+  IQuizItem,
+  TAnswerType,
+} from '../models';
 
 /**
  * Export Hook
@@ -33,7 +37,7 @@ export const useQuizSetup = () => {
   ) => quizItem.incorrect_answers.concat(quizItem.correct_answer));
 
   const sortPossibleAnswers = memoize((
-    answers: string[],
+    answers: TAnswerType[],
   ) => answers.sort((a, b) => (a > b ? 1 : -1)));
 
   // Lifecycle

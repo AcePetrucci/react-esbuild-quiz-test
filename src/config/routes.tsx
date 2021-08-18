@@ -10,7 +10,11 @@ import {
  * Add Components
  */
 
-import { HomeComponent, QuizComponent } from '../pages';
+import {
+  HomeComponent,
+  QuizComponent,
+  ScoreComponent,
+} from '../pages';
 
 /**
  * Add App Routes
@@ -25,6 +29,10 @@ export const Routes = () => (
 
       <Route exact path="/quiz">
         <QuizComponent />
+      </Route>
+
+      <Route exact path="/score">
+        <ScoreComponent />
       </Route>
 
       <Route path="*">
