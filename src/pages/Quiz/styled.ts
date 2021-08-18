@@ -5,6 +5,7 @@ import {
   fontSize,
   H1,
   H2,
+  H4,
   pxToRem,
 } from 'styled';
 
@@ -52,6 +53,7 @@ export const QuizActions = styled.div`
   justify-content: space-around;
   width: 100%;
   max-width: ${pxToRem(1280)};
+  margin-bottom: ${pxToRem(80)};
 `;
 
 export const QuizButton = styled.button<{ answer: string }>`
@@ -69,4 +71,8 @@ export const QuizButton = styled.button<{ answer: string }>`
   &:focus, &:hover {
     background-color: ${(props) => themes.dark.colors[props.answer].focus};
   }
+`;
+
+export const QuizLength = styled(H4)`
+  word-spacing: ${pxToRem(4)};
 `;

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
+import uuid from 'react-uuid';
 
 // Styled Components
 import {
@@ -8,6 +10,7 @@ import {
   QuizQuestionWrapper,
   QuizActions,
   QuizButton,
+  QuizLength,
 } from './styled';
 
 // Hooks
@@ -19,9 +22,7 @@ import { useQuizSetup, useQuizQuestions } from './hooks';
 
 export const QuizComponent = (_props) => {
   const { quizData } = useQuizSetup();
-  const { currentQuestion, nextQuestion } = useQuizQuestions();
-
-  console.log(quizData);
+  const { currentQuestion, answerQuestion } = useQuizQuestions(quizData);
 
   // Render
   return quizData
@@ -39,11 +40,22 @@ export const QuizComponent = (_props) => {
 
         <QuizActions>
           { quizData[currentQuestion].possible_answers.map((answer) => (
-            <QuizButton answer={answer.toLowerCase()}>
+            <QuizButton
+              key={uuid()}
+              answer={answer.toLowerCase()}
+              value={answer}
+              onClick={answerQuestion}
+            >
               { answer }
             </QuizButton>
           )) }
         </QuizActions>
+
+        <QuizLength>
+          { currentQuestion + 1 } / { quizData.length }
+        </QuizLength>
+
+        { (currentQuestion + 1 >= quizData.length) && <Redirect to="/home" /> }
       </QuizWrapper>
     )
     : <></>;

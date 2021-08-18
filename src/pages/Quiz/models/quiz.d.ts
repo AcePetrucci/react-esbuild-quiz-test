@@ -1,11 +1,12 @@
+export type TAnswerType = 'False' | 'True';
 export interface IQuizItem {
   category: string;
   type: string;
   difficulty: string;
   question: string;
-  correct_answer: string;
-  incorrect_answers: string[];
-  possible_answers?: string[];
+  correct_answer: TAnswerType;
+  incorrect_answers: TAnswerType[];
+  possible_answers?: TAnswerType[];
 }
 
 export interface IQuiz {

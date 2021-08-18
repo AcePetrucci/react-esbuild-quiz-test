@@ -54,7 +54,8 @@ module.exports = {
       "ImportDeclaration": { "multiline": true, "minProperties": 3 }, 
       "ExportDeclaration": { "multiline": true, "minProperties": 3 } 
     }],
-    "indent": [ 2, 2 ]
+    "indent": [ 2, 2 ],
+    "react/jsx-one-expression-per-line": 'off'
   },
   settings: {
     "import/resolver": {
