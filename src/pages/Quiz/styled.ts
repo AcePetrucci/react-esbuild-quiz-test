@@ -76,3 +76,10 @@ export const QuizButton = styled.button<{ answer: string }>`
 export const QuizLength = styled(H4)`
   word-spacing: ${pxToRem(4)};
 `;
+
+export const QuizLoading = styled.div`
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;

@@ -2,6 +2,9 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import uuid from 'react-uuid';
 
+// Shared Components
+import { SpinnerComponent } from 'components';
+
 // Styled Components
 import {
   QuizWrapper,
@@ -11,6 +14,7 @@ import {
   QuizActions,
   QuizButton,
   QuizLength,
+  QuizLoading,
 } from './styled';
 
 // Hooks
@@ -56,5 +60,9 @@ export const QuizComponent = (_props) => {
           </QuizLength>
         </QuizWrapper>
       )
-    : <></>;
+    : (
+      <QuizLoading>
+        <SpinnerComponent />
+      </QuizLoading>
+    );
 };

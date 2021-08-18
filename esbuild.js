@@ -48,6 +48,7 @@ esbuild.build({
       providers: path.resolve(__dirname, 'src/shared/providers/index.ts'),
       themes: path.resolve(__dirname, 'src/shared/themes/index.ts'),
       styled: path.resolve(__dirname, 'src/shared/styled/index.ts'),
+      components: path.resolve(__dirname, 'src/shared/components/index.ts'),
     }),
     sassPlugin(),
     postCssPlugin({
