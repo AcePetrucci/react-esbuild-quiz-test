@@ -2,8 +2,15 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "jsx": "react",
+    "baseUrl": "./src",
+    "paths": {
+      "models": ["shared/models"],
+      "providers": ["shared/providers"],
+      "themes": ["shared/themes"],
+      "styled": ["shared/styled"]
+    }
   },
   "exclude": [
     "/node_modules/**/*",
-  ]
+  ],
 }

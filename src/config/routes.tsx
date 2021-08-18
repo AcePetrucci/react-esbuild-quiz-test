@@ -1,5 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
 /**
  * Add Components
